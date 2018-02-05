@@ -34,6 +34,11 @@ Setup encoding for DB
 sudo /usr/sbin/update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 ```
 
+Update apt-get
+```
+sudo apt-get update
+```
+
 Install PostgreSQL and other depenedencies
 ```
 sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev postgresql libpq-dev
