@@ -57,8 +57,8 @@ Add Vagrant user to DB
 ```
 createuser vagrant
 psql
-ALTER USER vagrant WITH Superuser
-\q 
+ALTER USER vagrant WITH Superuser;
+\q
 ```
 
 Exit current user:
