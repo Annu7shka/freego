@@ -209,4 +209,16 @@ Connect to rails console:
 heroku console --app freego-events
 ```
 
+Update deployment build:
+```
+cd fe
+npm run build
+```
+
+Move fe/build folder content to be/public
+
+Deploy to heroku. From vagrant:
+```
+git push heroku master
+```
 
