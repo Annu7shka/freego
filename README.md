@@ -217,6 +217,8 @@ npm run build
 
 Move fe/build folder content to be/public
 
+Rename index.html to home.html
+
 Deploy to heroku. From vagrant:
 ```
 git push heroku master
