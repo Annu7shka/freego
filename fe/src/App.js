@@ -35,7 +35,7 @@ class App extends Component {
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
-            <form class="form-inline form-stretched my-2 my-lg-0">
+            <form className="form-inline form-stretched my-2 my-lg-0">
               <input className="form-control input-lg" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success my-2 my-sm-0 btn-round" type="submit">Search</button>
             </form>
@@ -74,50 +74,52 @@ class App extends Component {
           </a>
         </div>
         <table className="table-calendar">
-          <tr>
-            <td>
-              <div className="card">
-                <img className="card-img-top" src="..." alt="Card image cap" />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
+          <tbody>
+            <tr>
+              <td>
+                <div className="card">
+                  <img className="card-img-top" src="..." alt="Card image cap" />
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div className="card">
-                <img className="card-img-top" src="..." alt="Card image cap" />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
+              </td>
+              <td>
+                <div className="card">
+                  <img className="card-img-top" src="..." alt="Card image cap" />
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                  </div>
                 </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-          <td>
-            <div className="card">
-              <img className="card-img-top" src="..." alt="Card image cap" />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div className="card">
-              <img className="card-img-top" src="..." alt="Card image cap" />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </td>
-        </tr>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div className="card">
+                  <img className="card-img-top" src="..." alt="Card image cap" />
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div className="card">
+                  <img className="card-img-top" src="..." alt="Card image cap" />
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
         </table>
         <table>
           <tbody>
