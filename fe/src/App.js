@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 
+let env = 'dev';
+
+if (window.location.host === 'freego-events.herokuapp.com') {
+  env = 'prod';
+}
+
+const eventsPath = {
+  dev: 'http://localhost:3001/events/index.json',
+  prod: 'https://freego-events.herokuapp.com/events/index.json'
+}[env];
+
 class App extends Component {
   componentDidMount() {
-    fetch('http://localhost:3001/events/index.json')
+    fetch(eventsPath)
       .then((resp) => resp.json())
       .then((data) => {
         this.setState({
