@@ -83,7 +83,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: freego_production
-  username: freego
-  password: <%= ENV['FREEGO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
