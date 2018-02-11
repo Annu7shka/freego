@@ -154,3 +154,59 @@ Manual start DB:
 ```
 sudo /usr/lib/postgresql/9.5/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start
 ```
+
+
+## Deployment
+Install heroku client to vagrant image:
+```
+wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+```
+
+Login to Heroku:
+```
+heroku login
+```
+Set BE repo for deployments and add heroku remote:
+```
+git init
+heroku git:remote -a freego-events
+```
+
+Commit changes and send to Heroku:
+```
+git add .
+git commit -am "make it better"
+git push heroku master
+```
+
+Running rake commands on heroku: 
+```
+ heroku run rake db:create --app freego-events
+```
+
+Reset DB:
+```
+heroku pg:reset DATABASE --app freego-events
+```
+
+Connect to DB:
+```
+heroku pg:psql postgresql-parallel-51963 --app freego-events
+```
+
+Run migrations:
+```
+heroku run rake db:migrate --app freego-events
+```
+
+Run seeds:
+```
+heroku run rake db:seed --app freego-events
+```
+
+Connect to rails console:
+```
+heroku console --app freego-events
+```
+
+
