@@ -37,6 +37,44 @@ class App extends Component {
     })
   }
 
+  renderEventsRow(eventsRow) {
+    console.log('eventsRow', eventsRow);
+    return eventsRow.map((event, i) => {
+      return (
+        <div className="col-12 col-md-6">
+          <div className="card">
+            <img className="card-img-top" src="..." alt="Card image cap" />
+            <div className="card-body">
+              <h5 className="card-title">{event.title}</h5>
+              <p className="card-text">{event.description}</p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  }
+
+  renderEventsGrid(events) {
+    let eventsRows = [];
+
+    events.forEach((e, i) => {
+      if (eventsRows.length && eventsRows[eventsRows.length - 1].length === 1) {
+        eventsRows[eventsRows.length - 1].push(e);
+      } else {
+        eventsRows.push([e]);
+      }
+    });
+
+    return eventsRows.map((eventsRow, i) => {
+      return (
+        <div className="row">
+          {this.renderEventsRow(eventsRow)}
+        </div>
+      );
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -84,67 +122,7 @@ class App extends Component {
             <span className="sr-only">Next</span>
           </a>
         </div>
-        <table className="table-calendar">
-          <tbody>
-            <tr>
-              <td>
-                <div className="card">
-                  <img className="card-img-top" src="..." alt="Card image cap" />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div className="card">
-                  <img className="card-img-top" src="..." alt="Card image cap" />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div className="card">
-                  <img className="card-img-top" src="..." alt="Card image cap" />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div className="card">
-                  <img className="card-img-top" src="..." alt="Card image cap" />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <tbody>
-            <tr>
-              <th>Type</th>
-              <th>Title</th>
-              <th>Description</th>
-            </tr>
-            {this.eventsTable(this.state.events)}
-          </tbody>
-        </table>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {this.renderEventsGrid(this.state.events)}
       </div>
     );
   }
