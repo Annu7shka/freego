@@ -93,6 +93,15 @@ Install bundler
 gem install bundler
 ```
 
+Install rbenv-vars plugin for env variables
+```
+git clone https://github.com/rbenv/rbenv-vars.git $(rbenv root)/plugins/rbenv-vars
+```
+
+Install [imageMagic](http://www.imagemagick.org/script/index.php)
+
+Ask working devs for .rbenv-vars file with necessary keys.
+
 Install nodeJS
 ```
 sudo apt-get install nodejs

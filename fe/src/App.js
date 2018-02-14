@@ -18,7 +18,7 @@ class App extends Component {
       .then((resp) => resp.json())
       .then((data) => {
         this.setState({
-          events: data.events
+          events: data
         });
 
         console.log(data.events);
@@ -43,7 +43,7 @@ class App extends Component {
       return (
         <div className="col-12 col-md-6">
           <div className="card">
-            <img className="card-img-top" src="..." alt="Card image cap" />
+            <img className="card-img-top" src={event.image_url} alt="Card image cap" />
             <div className="card-body">
               <h5 className="card-title">{event.title}</h5>
               <p className="card-text">{event.description}</p>
