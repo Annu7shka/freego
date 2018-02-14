@@ -43,8 +43,8 @@ ActiveAdmin.register Event do
   end
 
   form do |f|
-    f.input :start
-    f.input :end
+    f.input :start, :as => :string, :input_html => {:class => "hasDatetimePicker"}
+    f.input :end, :as => :string, :input_html => {:class => "hasDatetimePicker"}
     f.inputs "Upload" do
       f.input :image, required: true, as: :file
     end
