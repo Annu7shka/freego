@@ -19,3 +19,14 @@
   border-collapse: separate;
   border-spacing: 30px;
 }
+.checkbox-button:checked + .btn {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.dropdown-menu-buttons {
+  padding: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
