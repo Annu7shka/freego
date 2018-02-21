@@ -99,6 +99,9 @@ git clone https://github.com/rbenv/rbenv-vars.git $(rbenv root)/plugins/rbenv-va
 ```
 
 Install [imageMagic](http://www.imagemagick.org/script/index.php)
+```
+sudo apt-get install imagemagick
+```
 
 Ask working devs for .rbenv-vars file with necessary keys.
 
