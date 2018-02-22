@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import { filterAgeGroup } from '../helpers/filter';
 
 class HomePage extends Component {
+  componentDidMount() {
+    fetch('http://localhost:3001/slides/index.json')
+      .then((resp) => resp.json())
+      .then((data) => {
+        this.setState({
+          slides: data
+        });
+      });
+  }
   renderEventsGrid(events) {
     let eventsRows = [];
 
@@ -17,6 +26,19 @@ class HomePage extends Component {
       return (
         <div className="row">
           {this.renderEventsRow(eventsRow)}
+        </div>
+      );
+    });
+  }
+  renderSlides(slides) {
+    return slides.map((slide, i) => {
+      let slideClass = 'carousel-item';
+      if (i === 0) {
+        slideClass = 'carousel-item active';
+      }
+      return (
+        <div className={slideClass} key={i}>
+          <img className="d-block w-100" src={slide.image_url} alt={slide.title} />
         </div>
       );
     });
@@ -106,15 +128,7 @@ class HomePage extends Component {
             <li data-target="#EventsCarousel" data-slide-to="2"></li>
           </ol>
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img className="d-block w-100" src="/img/criancas_brincando.jpeg" alt="First slide" />
-            </div>
-            <div className="carousel-item">
-              <img className="d-block w-100" src="/img/criancas_brincando.jpeg" alt="Second slide" />
-            </div>
-            <div className="carousel-item">
-              <img className="d-block w-100" src="/img/criancas_brincando.jpeg" alt="Third slide" />
-            </div>
+            {this.renderSlides(this.state.slides)}
           </div>
           <a className="carousel-control-prev" href="#EventsCarousel" role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -134,6 +148,7 @@ class HomePage extends Component {
     super(props);
     this.state = {
       events: props.events,
+      slides: [],
       ageGroup: 'all'
     };
   }
