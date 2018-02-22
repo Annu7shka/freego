@@ -8,4 +8,6 @@ json.array! @events do |event|
   json.age_start event.age_start
   json.age_end event.age_end
   json.image_url event.image.url
+  json.address event.address
+  json.url event.url
 end
