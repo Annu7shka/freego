@@ -73,6 +73,9 @@ class HomePage extends Component {
             <button type="button" className="btn btn-outline-dark btn-round">Near me</button>
           </nav>
         </header>
+        <div className="motto-container">
+          <p>Take advantage of free things to do, free events in Philadephia area</p>
+        </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
           <button type="button" className="btn btn-outline-dark btn-round">Calendar</button>
           <button type="button" className="btn btn-outline-dark btn-round">Events</button>

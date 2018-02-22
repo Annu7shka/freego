@@ -30,3 +30,8 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.motto-container {
+  background-color: #FF0000;
+  height: 50px;
+}
+

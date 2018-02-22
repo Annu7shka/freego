@@ -2,7 +2,7 @@ ActiveAdmin.register Event do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :start, :end, :image, :event_type, :title, :description, :latitude, :longitude, :age_start, :age_end
+  permit_params :start, :end, :image, :event_type, :title, :description, :latitude, :longitude, :age_start, :age_end, :address, :url
 # or
 #
 # permit_params do
@@ -39,6 +39,8 @@ ActiveAdmin.register Event do
     column :longitude
     column :age_start
     column :age_end
+    column :address
+    column :url
     actions
   end
 
@@ -55,6 +57,8 @@ ActiveAdmin.register Event do
     f.input :longitude
     f.input :age_start
     f.input :age_end
+    f.input :address
+    f.input :url
     f.actions
   end
 

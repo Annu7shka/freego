@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
+import Calendar from './components/Calendar';
 
 let env = 'dev';
 
@@ -69,12 +70,11 @@ class App extends Component {
     })
   }
 
-
-
   render() {
     return (
       <div className="App">
         <HomePage events={this.state.events} />
+        <Calendar />
       </div>
     );
   }
