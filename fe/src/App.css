@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+}
 .btn-round {
   border-radius: 60%;
 }
@@ -31,7 +35,11 @@
   transform: translateX(-50%);
 }
 .motto-container {
-  background-color: #FF0000;
+  background-color: #ba4c4c;
   height: 50px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
 }
 

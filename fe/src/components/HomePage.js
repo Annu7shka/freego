@@ -62,7 +62,7 @@ class HomePage extends Component {
       <div className="HomePage">
         <header className="App-header">
           <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
-            <a className="navbar-brand" href="#">FreeGo</a>
+            <a className="navbar-brand" href="/"><img src="/img/logo.png" alt="FreeGo logo" /></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -74,7 +74,7 @@ class HomePage extends Component {
           </nav>
         </header>
         <div className="motto-container">
-          <p>Take advantage of free things to do, free events in Philadephia area</p>
+          <p>Take advantage of free things to do, free events in Philadelphia area</p>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
           <button type="button" className="btn btn-outline-dark btn-round">Calendar</button>
