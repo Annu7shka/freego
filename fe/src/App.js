@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
 import Calendar from './components/Calendar';
-
-let env = 'dev';
-
-if (window.location.host === 'freego-events.herokuapp.com') {
-  env = 'prod';
-}
+import urlConfig from './config/urlConfig';
 
 let ageGroups = [
   {
@@ -33,14 +28,9 @@ let ageGroups = [
 ];
 
 
-const eventsPath = {
-  dev: 'http://localhost:3001/events/index.json',
-  prod: 'https://freego-events.herokuapp.com/events/index.json'
-}[env];
-
 class App extends Component {
   componentDidMount() {
-    fetch(eventsPath)
+    fetch(urlConfig.events)
       .then((resp) => resp.json())
       .then((data) => {
         let events = data.map(event => {

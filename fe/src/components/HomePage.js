@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { filterAgeGroup } from '../helpers/filter';
+import urlConfig from '../config/urlConfig';
 
 class HomePage extends Component {
   componentDidMount() {
-    fetch('http://localhost:3001/slides/index.json')
+    fetch(urlConfig.slides)
       .then((resp) => resp.json())
       .then((data) => {
         this.setState({
