@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import '../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import HomePage from './components/HomePage';
 import Calendar from './components/Calendar';
+import EventGrid from './components/EventGrid';
 import urlConfig from './config/urlConfig';
 
 let ageGroups = [
@@ -64,7 +66,8 @@ class App extends Component {
     return (
       <div className="App">
         <HomePage events={this.state.events} />
-        <Calendar />
+        <Calendar events={this.state.events} />
+        <EventGrid events={this.state.events} />
       </div>
     );
   }

@@ -12,25 +12,6 @@ class HomePage extends Component {
         });
       });
   }
-  renderEventsGrid(events) {
-    let eventsRows = [];
-
-    events.forEach((e, i) => {
-      if (eventsRows.length && eventsRows[eventsRows.length - 1].length === 1) {
-        eventsRows[eventsRows.length - 1].push(e);
-      } else {
-        eventsRows.push([e]);
-      }
-    });
-
-    return eventsRows.map((eventsRow, i) => {
-      return (
-        <div className="row">
-          {this.renderEventsRow(eventsRow)}
-        </div>
-      );
-    });
-  }
   renderSlides(slides) {
     return slides.map((slide, i) => {
       let slideClass = 'carousel-item';
@@ -58,22 +39,6 @@ class HomePage extends Component {
     });
   }
 
-  renderEventsRow(eventsRow) {
-    return eventsRow.map((event, i) => {
-      return (
-        <div className="col-12 col-md-6">
-          <div className="card">
-            <img className="card-img-top" src={event.image_url} alt="Card image cap" />
-            <div className="card-body">
-              <h5 className="card-title">{event.title}</h5>
-              <p className="card-text">{event.description}</p>
-              <a href="#" className="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      );
-    });
-  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -140,7 +105,6 @@ class HomePage extends Component {
             <span className="sr-only">Next</span>
           </a>
         </div>
-        {this.renderEventsGrid(this.state.events)}
       </div>
     );
   }
