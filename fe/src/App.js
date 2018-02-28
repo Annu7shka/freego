@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import '../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import HomePage from './components/HomePage';
+import Header from './components/Header';
 import Calendar from './components/Calendar';
 import EventGrid from './components/EventGrid';
 import urlConfig from './config/urlConfig';
+import { Switch, Route } from 'react-router-dom';
+import { filterAgeGroup } from './helpers/filter';
+
 
 let ageGroups = [
   {
@@ -45,9 +49,24 @@ class App extends Component {
           return event;
         });
         this.setState({
-          events: events
+          events: events,
+          allEvents: events
         });
       });
+  }
+
+  setSelectedAgeRange(ageGroup) {
+    const allEvents = this.state.allEvents;
+    let events;
+    if (ageGroup === 'all') {
+      events = allEvents;
+    } else {
+      events = filterAgeGroup(allEvents, ageGroup);
+    }
+    this.setState({
+      ageGroup: ageGroup,
+      events: events
+    });
   }
 
   eventsTable(events) {
@@ -65,9 +84,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <HomePage events={this.state.events} />
-        <Calendar events={this.state.events} />
-        <EventGrid events={this.state.events} />
+        <Header setSelectedAgeRange={this.setSelectedAgeRange.bind(this)} ageGroup={this.state.ageGroup} />
+        <Switch>
+          <Route exact path='/' render={() => <HomePage events={this.state.events} />}/>
+          <Route path='/calendar' render={() => <Calendar events={this.state.events}/>}/>
+          <Route path='/events' render={() => <EventGrid events={this.state.events}/>}/>
+        </Switch>    
       </div>
     );
   }
@@ -75,7 +97,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [],
+      allEvents: [],
+      ageGroup: 'all'
     };
   }
 }
