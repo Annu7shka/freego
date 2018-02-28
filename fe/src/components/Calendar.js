@@ -20,7 +20,6 @@ class Calendar extends Component {
   }
 
   render() {
-    console.log(this.state.events);
     return (
       <BigCalendar
         events={this.state.events}
