@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root to: 'pages#main'
+  root to: 'static#homepage'
   get 'events/index'
   get 'slides/index'
   get '*path', to: 'static#homepage'
