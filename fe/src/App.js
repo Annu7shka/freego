@@ -3,12 +3,12 @@ import './App.css';
 import '../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import HomePage from './components/HomePage';
 import Header from './components/Header';
-import Calendar from './components/Calendar';
+import Calendars from './components/calendars/Calendars';
 import EventGrid from './components/EventGrid';
 import urlConfig from './config/urlConfig';
 import { Switch, Route } from 'react-router-dom';
 import { filterAgeGroup } from './helpers/filter';
-
+import moment from 'moment';
 
 let ageGroups = [
   {
@@ -46,6 +46,8 @@ class App extends Component {
               event.ageGroups.push(group.name);
             }
           });
+          event.start = moment(event.start);
+          event.end = moment(event.end);
           return event;
         });
         this.setState({
@@ -87,9 +89,9 @@ class App extends Component {
         <Header setSelectedAgeRange={this.setSelectedAgeRange.bind(this)} ageGroup={this.state.ageGroup} />
         <Switch>
           <Route exact path='/' render={() => <HomePage events={this.state.events} />}/>
-          <Route path='/calendar' render={() => <Calendar events={this.state.events}/>}/>
+          <Route path='/calendars' render={() => <Calendars events={this.state.events}/>}/>
           <Route path='/events' render={() => <EventGrid events={this.state.events}/>}/>
-        </Switch>    
+        </Switch>
       </div>
     );
   }

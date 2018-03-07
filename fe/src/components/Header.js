@@ -30,7 +30,7 @@ class Header extends Component {
           <p>Take advantage of free things to do, free events in Philadelphia area</p>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
-          <Link to={{ pathname: '/calendar' }} className="btn btn-outline-dark btn-round">Calendar</Link>
+          <Link to={{ pathname: '/calendars' }} className="btn btn-outline-dark btn-round">Calendar</Link>
           <Link to={{ pathname: '/events' }} className="btn btn-outline-dark btn-round">Events</Link>
           <button type="button" className="btn btn-outline-dark btn-round">Things to do</button>
           <div className="dropdown">

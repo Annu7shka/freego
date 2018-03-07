@@ -6,13 +6,11 @@ BigCalendar.momentLocalizer(moment);
 
 let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
 
-class Calendar extends Component {
+class Month extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       events: nextProps.events.map((e, i) => {
-        e.start = new Date(e.start);
-        e.end = new Date(e.end);
         e.id = i;
         return e;
       })
@@ -46,4 +44,4 @@ class Calendar extends Component {
 
 }
 
-export default Calendar;
+export default Month;
