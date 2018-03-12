@@ -13,22 +13,18 @@ import moment from 'moment';
 let ageGroups = [
   {
     name: 'infant',
-    range: [0, 1]
-  },
-  {
-    name: 'toddler',
-    range: [1, 4],
+    range: [0, 2]
   },
   {
     name: 'preschooler',
-    range: [4, 6],
+    range: [2, 6],
   },
   {
-    name: 'schoolAged',
+    name: 'schoolAge',
     range: [6, 12],
   },
   {
-    name: 'adolescent',
+    name: 'adults',
     range: [12, 18]
   }
 ];

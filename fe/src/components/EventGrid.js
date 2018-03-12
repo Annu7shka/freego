@@ -20,6 +20,34 @@ class EventGrid extends Component {
       );
     });
   }
+  renderTags(ageGroups) {
+    if (!ageGroups || ageGroups.length === 0) {
+      return false;
+    }
+    return ageGroups.map((ageGroup, i) => {
+      let groupName;
+
+      switch (ageGroup) {
+        case 'infant':
+          groupName = 'infant';
+          break;
+        case 'preschooler':
+          groupName = 'preschooler';
+          break;
+        case 'schoolAge':
+          groupName = 'school age';
+          break;
+        case 'adults':
+          groupName = 'adult';
+          break;
+      }
+      return (
+        <div className={'tag tag_' + ageGroup} key={i}>
+         {groupName}
+        </div>
+      );
+    });
+  }
 
   renderEventsRow(eventsRow) {
     return eventsRow.map((event, i) => {
@@ -31,6 +59,9 @@ class EventGrid extends Component {
               <h5 className="card-title">{event.title}</h5>
               <p className="card-text">{event.description}</p>
               <a href="#" className="btn btn-primary">Go somewhere</a>
+              <div className="tags">
+                {this.renderTags(event.ageGroups)}
+              </div>
             </div>
           </div>
         </div>

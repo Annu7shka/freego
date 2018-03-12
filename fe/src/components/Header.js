@@ -42,14 +42,12 @@ class Header extends Component {
               <label htmlFor="age-group-all" className="btn btn-outline-dark btn-block btn-round">All</label>
               <input type="radio" id="age-group-infant" className="sr-only checkbox-button" value="infant" name="age-group" checked={this.state.ageGroup === 'infant'} onChange={e => {this.props.setSelectedAgeRange('infant')}} />
               <label htmlFor="age-group-infant" className="btn btn-outline-dark btn-block btn-round">Infant</label>
-              <input type="radio" id="age-group-toddler" className="sr-only checkbox-button" value="toddler" name="age-group" checked={this.state.ageGroup === 'toddler'} onChange={e => {this.props.setSelectedAgeRange('toddler')}} />
-              <label htmlFor="age-group-toddler" className="btn btn-outline-dark btn-block btn-round">Toddler</label>
               <input type="radio" id="age-group-preschooler" className="sr-only checkbox-button" value="preschooler" name="age-group" checked={this.state.ageGroup === 'preschooler'} onChange={e => {this.props.setSelectedAgeRange('preschooler')}} />
               <label htmlFor="age-group-preschooler" className="btn btn-outline-dark btn-block btn-round">Preschooler</label>
-              <input type="radio" id="age-group-schoolAged" className="sr-only checkbox-button" value="schoolAged" name="age-group" checked={this.state.ageGroup === 'schoolAged'} onChange={e => {this.props.setSelectedAgeRange('schoolAged')}} />
-              <label htmlFor="age-group-schoolAged" className="btn btn-outline-dark btn-block btn-round">School Aged</label>
-              <input type="radio" id="age-group-adolescent" className="sr-only checkbox-button" value="adolescent" name="age-group" checked={this.state.ageGroup === 'adolescent'} onChange={e => {this.props.setSelectedAgeRange('adolescent')}} />
-              <label htmlFor="age-group-adolescent" className="btn btn-outline-dark btn-block btn-round">Adolescent</label>
+              <input type="radio" id="age-group-schoolAged" className="sr-only checkbox-button" value="schoolAge" name="age-group" checked={this.state.ageGroup === 'schoolAged'} onChange={e => {this.props.setSelectedAgeRange('schoolAged')}} />
+              <label htmlFor="age-group-schoolAged" className="btn btn-outline-dark btn-block btn-round">School Age</label>
+              <input type="radio" id="age-group-adolescent" className="sr-only checkbox-button" value="adult" name="age-group" checked={this.state.ageGroup === 'adolescent'} onChange={e => {this.props.setSelectedAgeRange('adolescent')}} />
+              <label htmlFor="age-group-adolescent" className="btn btn-outline-dark btn-block btn-round">Adult</label>
             </div>
           </div>
           <button type="button" className="btn btn-outline-dark btn-round">Attractions</button>
