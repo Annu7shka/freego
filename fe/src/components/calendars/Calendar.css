@@ -2,5 +2,8 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 14px;
 }
+.rbc-month-row {
+  flex-basis: auto;
+}
 .nav-card {
 }

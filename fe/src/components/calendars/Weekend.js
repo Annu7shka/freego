@@ -1,22 +1,9 @@
 import React, { Component } from 'react';
 import { filterEventDate } from '../../helpers/filter';
 import moment from 'moment';
+import EventGrid from '../EventGrid'
 
 class Weekend extends Component {
-  renderEvents(events) {
-    return events.map((event, i) => {
-      return (
-        <div className="card"  key={i}>
-          <img className="card-img-top" src={event.image_url} alt={event.title} />
-          <div className="card-body">
-            <h5 className="card-title">{event.title}</h5>
-            <p className="card-text">{event.description}</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      );
-    });
-  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -27,8 +14,7 @@ class Weekend extends Component {
   render() {
     return (
       <span>
-        This weekend
-        {this.renderEvents(this.state.events)}
+        <EventGrid events={this.state.events} />
       </span>
     );
   }

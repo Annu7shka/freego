@@ -4,6 +4,10 @@ class EventGrid extends Component {
     renderEventsGrid(events) {
     let eventsRows = [];
 
+    if (events.length === 0) {
+      return 'No events';
+    }
+
     events.forEach((e, i) => {
       if (eventsRows.length && eventsRows[eventsRows.length - 1].length === 1) {
         eventsRows[eventsRows.length - 1].push(e);
@@ -56,9 +60,8 @@ class EventGrid extends Component {
           <div className="card">
             <img className="card-img-top" src={event.image_url} alt={event.title} />
             <div className="card-body">
-              <h5 className="card-title">{event.title}</h5>
+              <a href="#" className="card-title">{event.title}</a>
               <p className="card-text">{event.description}</p>
-              <a href="#" className="btn btn-primary">Go somewhere</a>
               <div className="tags">
                 {this.renderTags(event.ageGroups)}
               </div>
@@ -77,7 +80,6 @@ class EventGrid extends Component {
   render() {
     return (
       <div>
-        <h2>EventGrid</h2>
         {this.renderEventsGrid(this.state.events)}
       </div>
     );

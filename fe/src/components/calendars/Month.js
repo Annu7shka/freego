@@ -4,7 +4,8 @@ import moment from 'moment';
 
 BigCalendar.momentLocalizer(moment);
 
-let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
+// let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
+let views = [BigCalendar.Views.MONTH]
 
 class Month extends Component {
 
@@ -21,7 +22,7 @@ class Month extends Component {
     return (
       <BigCalendar
         events={this.state.events}
-        views={allViews}
+        views={views}
         step={60}
         showMultiDayTimes
         defaultDate={new Date()}

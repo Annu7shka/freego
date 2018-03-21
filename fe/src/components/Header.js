@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
 
@@ -15,13 +15,13 @@ class Header extends Component {
       <div className="appHeader">
         <header className="App-header">
           <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
-            <Link to={{ pathname: '/' }} className="navbar-brand"><img src="/img/logo.png" alt="FreeGo logo" /></Link>
+            <NavLink to={{ pathname: '/' }} className="navbar-brand"><img src="/img/logo.png" alt="FreeGo logo" /></NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
             <form className="form-inline form-stretched my-2 my-lg-0">
               <input className="form-control input-lg" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success my-2 my-sm-0 btn-round" type="submit">Search</button>
+              <button className="search btn btn-outline my-2 my-sm-0 btn-round" type="submit">Search</button>
             </form>
             <button type="button" className="btn btn-outline-dark btn-round">Near me</button>
           </nav>
@@ -30,8 +30,8 @@ class Header extends Component {
           <p>Take advantage of free things to do, free events in Philadelphia area</p>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
-          <Link to={{ pathname: '/calendars' }} className="btn btn-outline-dark btn-round">Calendar</Link>
-          <Link to={{ pathname: '/events' }} className="btn btn-outline-dark btn-round">Events</Link>
+          <NavLink to={{ pathname: '/calendars' }} activeClassName="active" className="btn btn-outline-dark btn-round">Calendar</NavLink>
+          <NavLink to={{ pathname: '/events' }} activeClassName="active" className="btn btn-outline-dark btn-round">Events</NavLink>
           <button type="button" className="btn btn-outline-dark btn-round">Things to do</button>
           <div className="dropdown">
             <button className="btn btn-outline-dark btn-round dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
