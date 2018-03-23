@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import '../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
 import HomePage from './components/HomePage';
+import EventPage from './components/EventPage';
 import Header from './components/Header';
 import Calendars from './components/calendars/Calendars';
 import EventGrid from './components/EventGrid';
@@ -86,7 +87,8 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() => <HomePage events={this.state.events} />}/>
           <Route path='/calendars' render={() => <Calendars events={this.state.events}/>}/>
-          <Route path='/events' render={() => <EventGrid events={this.state.events}/>}/>
+          <Route exact path='/events' render={() => <EventGrid events={this.state.events}/>}/>
+          <Route path='/events/:name' render={(route) => <EventPage eventName={route.match.params.name} events={this.state.allEvents} />}/>
         </Switch>
       </div>
     );
