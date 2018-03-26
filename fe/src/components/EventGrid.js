@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+
+
 
 class EventGrid extends Component {
     renderEventsGrid(events) {
@@ -60,7 +63,7 @@ class EventGrid extends Component {
           <div className="card">
             <img className="card-img-top" src={event.image_url} alt={event.title} />
             <div className="card-body">
-              <a href="#" className="card-title">{event.title}</a>
+              <NavLink to={{ pathname: '/events/' + encodeURI(event.title) }} className="card-title">{event.title}</NavLink>
               <p className="card-text">{event.description}</p>
               <div className="tags">
                 {this.renderTags(event.ageGroups)}
