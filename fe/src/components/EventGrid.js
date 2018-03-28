@@ -61,7 +61,8 @@ class EventGrid extends Component {
       return (
         <div className="col-12 col-md-6" key={i}>
           <div className="card">
-            <img className="card-img-top" src={event.image_url} alt={event.title} />
+            <NavLink to={{ pathname: '/events/' + encodeURI(event.title) }} className="card-title">{event.title}
+              <img className="card-img-top" src={event.image_url} alt={event.title} /></NavLink>
             <div className="card-body">
               <NavLink to={{ pathname: '/events/' + encodeURI(event.title) }} className="card-title">{event.title}</NavLink>
               <p className="card-text">{event.description}</p>
