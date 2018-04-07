@@ -61,4 +61,12 @@ body {
   border-color: red;
 }
 
+.Map {
+  width: 100%;
+  height: 500px;
+}
 
+.Map > div {
+  width: 100%;
+  height: 100%;
+}

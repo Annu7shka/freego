@@ -6,6 +6,7 @@ import EventPage from './components/EventPage';
 import Header from './components/Header';
 import Calendars from './components/calendars/Calendars';
 import EventGrid from './components/EventGrid';
+import MapContainer from './components/MapContainer';
 import urlConfig from './config/urlConfig';
 import { Switch, Route } from 'react-router-dom';
 import { filterAgeGroup } from './helpers/filter';
@@ -84,6 +85,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header setSelectedAgeRange={this.setSelectedAgeRange.bind(this)} ageGroup={this.state.ageGroup} />
+        <MapContainer />
         <Switch>
           <Route exact path='/' render={() => <HomePage events={this.state.events} />}/>
           <Route path='/calendars' render={() => <Calendars events={this.state.events}/>}/>
