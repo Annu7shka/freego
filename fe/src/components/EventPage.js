@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MapContainer from './MapContainer';
 
 class EventPage extends Component {
 
@@ -53,7 +54,7 @@ class EventPage extends Component {
             <img className="card-img-top" src={foundEvents[0].image_url} alt={foundEvents[0].title} />
           </div>
           <div className="col-12 col-md-6">
-            <h2>Map</h2>
+            <MapContainer events={[foundEvents[0]]} />
           </div>
         </div>
 

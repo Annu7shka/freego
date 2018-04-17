@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 export class Marker extends Component {
 
   componentWillReceiveProps(newProps) {
-    if ((this.props.map !== newProps.map) ||
+    if ((newProps.map !== this.props.map) ||
       (this.props.position !== newProps.position)) {
-        this.renderMarker();
+        this.renderMarker(newProps.map);
     }
   }
 
@@ -13,9 +13,9 @@ export class Marker extends Component {
     this.renderMarker();
   }
 
-  renderMarker() {
-    let {
-      map, google, position, mapCenter
+  renderMarker(map) {
+    const {
+      google, position, mapCenter
     } = this.props;
 
     if (!map) {
