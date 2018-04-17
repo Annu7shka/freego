@@ -5,16 +5,27 @@ import React, { Component } from 'react';
 
 
 export class MapContainer extends React.Component {
+  renderMarkers(events) {
+    return events.reduce((acc, event, i) => {
+
+      if (event.latitude && event.longitude) {
+        acc.push(
+          <Marker key={'Marker' + i} position={{lat: event.latitude, lng: event.longitude}} />
+        );
+      }
+      return acc;
+    }, []);
+  }
   render() {
     if (!this.props.loaded) {
       return <div>Loading...</div>
     }
-    const pos = {lat: 37.759703, lng: -122.428093}
+    console.log(this.props.events);
+
     return (
       <div className="Map">
         <Map google={this.props.google}>
-          <Marker />
-          <Marker position={pos} />
+          {this.renderMarkers(this.props.events)}
         </Map>
       </div>
     )

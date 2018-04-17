@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom';
 
 export class Map extends React.Component {
   componentWillReceiveProps(prevProps, prevState) {
-    console.log('new props');
     if (prevProps.google !== this.props.google) {
       this.loadMap();
     }
   }
 
   renderChildren() {
+    console.log('PROPS', this.props)
     const {children} = this.props;
 
     if (!children) return;
-    let lat = 37.774929;
-    let lng = -120.419416;
+    let lat = 40.101587;
+    let lng = -75.273563;
     // if (this.props.google) {
     //   let marker = new this.props.google.maps.Marker({
     //     map: this.map,
@@ -25,7 +25,6 @@ export class Map extends React.Component {
     // }
 
     return React.Children.map(children, c => {
-        console.log(c);
         return React.cloneElement(c, {
         map: this.state.map,
         google: this.props.google,
@@ -46,9 +45,9 @@ export class Map extends React.Component {
 
       const mapRef = this.refs.map;
       const node = ReactDOM.findDOMNode(mapRef);
-      let zoom = 14;
-      let lat = 37.774929;
-      let lng = -122.419416;
+      let zoom = 8;
+      let lat = 40.0481661;
+      let lng = -75.1457838;
       const center = new maps.LatLng(lat, lng);
       const mapConfig = Object.assign({}, {
         center: center,

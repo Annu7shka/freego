@@ -34,7 +34,6 @@ export class Marker extends Component {
     };
     this.marker = new google.maps.Marker(pref);
     this.marker.setMap(map);
-    console.log('markger', pos, markerPos, position, this.props);
   }
 
   render() {

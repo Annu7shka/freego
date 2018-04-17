@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import urlConfig from '../config/urlConfig';
+import MapContainer from './MapContainer';
+
 
 class HomePage extends Component {
   componentDidMount() {
@@ -48,6 +50,12 @@ class HomePage extends Component {
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="sr-only">Next</span>
           </a>
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-6"></div>
+          <div className="col-12 col-md-6">
+            <MapContainer events={this.state.events} />
+          </div>
         </div>
       </div>
     );
