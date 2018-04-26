@@ -26,6 +26,17 @@ class HomePage extends Component {
       );
     });
   }
+  renderDots(slides) {
+    return slides.map((slide, i) => {
+      let slideClass;
+      if (i === 0) {
+        slideClass = 'active';
+      }
+      return (
+       <li data-target="#EventsCarousel" data-slide-to={i} className={slideClass} key={'dot' + i}></li>
+      );
+    });
+  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -35,9 +46,8 @@ class HomePage extends Component {
   render() {
     return (
       <div className="HomePage">
-        <div id="EventsCarousel" className="carousel slide" data-ride="carousel"> <ol className="carousel-indicators"> <li data-target="#EventsCarousel" data-slide-to="0" className="active"></li>
-            <li data-target="#EventsCarousel" data-slide-to="1"></li>
-            <li data-target="#EventsCarousel" data-slide-to="2"></li>
+        <div id="EventsCarousel" className="carousel slide" data-ride="carousel"> <ol className="carousel-indicators"> 
+            {this.renderDots(this.state.slides)}
           </ol>
           <div className="carousel-inner">
             {this.renderSlides(this.state.slides)}
